@@ -1,0 +1,26 @@
+package main
+
+templ hello(name string) {
+	<div>Hello, { name }</div>
+}
+
+templ Page() {
+	<html>
+		<head>
+			<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+			<title>My Page</title>
+		</head>
+		<body>
+		<div id="parent-div">
+			@hello("World")
+		</div>
+			<button hx-get="/hello"
+    hx-trigger="click"
+    hx-target="#parent-div"
+    hx-swap="outerHTML"
+>
+    Click Me!
+</button>
+		</body>
+	</html>
+}
