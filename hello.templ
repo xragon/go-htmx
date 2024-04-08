@@ -11,16 +11,17 @@ templ Page() {
 			<title>My Page</title>
 		</head>
 		<body>
-		<div id="parent-div">
-			@hello("World")
-		</div>
-			<button hx-get="/hello"
-    hx-trigger="click"
-    hx-target="#parent-div"
-    hx-swap="outerHTML"
->
-    Click Me!
-</button>
+			<div id="parent-div">
+				@hello("World")
+			</div>
+			<button
+				hx-get="/hello"
+				hx-trigger="click"
+				hx-target="#parent-div"
+				hx-swap="outerHTML"
+			>
+				Click Me!
+			</button>
 		</body>
 	</html>
 }
